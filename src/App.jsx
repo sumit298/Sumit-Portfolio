@@ -22,16 +22,16 @@ const Portfolio = () => {
         
         {/* Header */}
         <AnimatedWrapper delay={0.1}>
-        <header className="flex items-start gap-6 mb-16">
+        <header className="flex flex-col sm:flex-row items-start gap-6 mb-16">
           <img 
             src={personalInfo.image}
             alt={personalInfo.name}
-            className="w-32 h-32 rounded-2xl object-cover"
+            className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl object-cover"
           />
-          <div className="flex-1">
-            <div className="flex items-center gap-3 mb-2">
-              <h1 className="text-3xl font-bold text-white">{personalInfo.name}</h1>
-              <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-500 text-sm">
+          <div className="flex-1 w-full">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
+              <h1 className="text-2xl sm:text-3xl font-bold text-white">{personalInfo.name}</h1>
+              <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/30 text-green-500 text-sm w-fit">
                 <span className="w-2 h-2 bg-green-500 rounded-full"></span>
                 Available
               </div>
