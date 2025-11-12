@@ -139,7 +139,7 @@ export const projects = [
     badges: ["Running"],
     description: "Real-time collaborative whiteboard platform built using React, tldraw library, and Socket.IO. Enables 500+ concurrent participants to draw, sketch, and collaborate in real-time with low-latency synchronization.",
     tech: ["React.js", "TypeScript", "Socket.IO", "tldraw", "WebSockets"],
-    liveUrl: "https://whiteboard-frontend-v1.netlify.app/",
+    liveUrl: "https://multiplayer-whiteboard-theta.vercel.app/",
     githubUrl: "https://github.com/sumit298/multiplayer-whiteboard",
     gradient: "from-blue-900 to-blue-700",
     image: "/images/whiteboard-preview.png"
@@ -172,7 +172,7 @@ export const projects = [
     badges: ["Running"],
     description: "Collection of LeetCode problem solutions with explanations and multiple approaches. Built with Docusaurus for easy navigation.",
     tech: ["Docusaurus", "React.js", "JavaScript", "Algorithms", "Data Structures"],
-    liveUrl: "https://dsa-solutions.netlify.app/",
+    liveUrl: "https://leetcode-solutions-pearl.vercel.app/",
     githubUrl: "https://github.com/sumit298/Leetcode-Solutions",
     gradient: "from-orange-900 to-red-700",
     image: "/images/leetcode-preview-light.png",
