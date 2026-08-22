@@ -1,51 +1,427 @@
 @import "tailwindcss";
 
+/*
+  Two complementary accents, ~183 degrees apart on the wheel:
+    violet     #5b2eff (hue 257)
+    chartreuse #c8f135 (hue  74)
+  Each ground gets the readable member of the pair as its primary accent, and a
+  tuned variant of the other as its secondary — so the pairing holds on both.
+  Grounds alternate between paper and slate so sections read as printed bands.
+*/
+@theme {
+  --color-paper: #eceaf2;
+  --color-paper-2: #e0dded;
+  --color-slate: #0d0d16;
+  --color-slate-2: #161623;
+  --color-violet: #5b2eff;
+  --color-chartreuse: #c8f135;
+
+  --font-display: "Anton", "Arial Narrow", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --ground: var(--color-paper);
+  --ground-2: var(--color-paper-2);
+  --fg: #100f18;
+  --fg-muted: #4f4d61;
+  --fg-faint: #85829a;
+  --hair: rgba(16, 15, 24, 0.16);
+  --hair-soft: rgba(16, 15, 24, 0.09);
+  /* Violet carries on paper; chartreuse is darkened to an olive so it still reads. */
+  --accent: var(--color-violet);
+  --accent-2: #6d7d0a;
+  --accent-ink: #ffffff;
+
+  /* Values a swept row flips to — i.e. the other band's palette. */
+  --sweep: #100f18;
+  --sweep-fg: #eeecf6;
+  --sweep-fg-muted: #9c99b3;
+  --sweep-fg-faint: #67647d;
+  --sweep-hair: rgba(238, 236, 246, 0.28);
+  --sweep-accent: var(--color-chartreuse);
+  --sweep-accent-2: #9d8cff;
+  --surface: var(--color-paper);
+  color-scheme: light;
+}
+
+/* Inverted band: same tokens, flipped values, so every component works on both. */
+.band-ink {
+  --ground: var(--color-slate);
+  --ground-2: var(--color-slate-2);
+  --fg: #eeecf6;
+  --fg-muted: #9c99b3;
+  --fg-faint: #67647d;
+  --hair: rgba(238, 236, 246, 0.16);
+  --hair-soft: rgba(238, 236, 246, 0.08);
+  /* Roles swap on slate: chartreuse leads, violet is lifted to stay legible. */
+  --accent: var(--color-chartreuse);
+  --accent-2: #9d8cff;
+  --accent-ink: #0d0d16;
+
+  --sweep: #eeecf6;
+  --sweep-fg: #0d0d16;
+  --sweep-fg-muted: #4f4d61;
+  --sweep-fg-faint: #85829a;
+  --sweep-hair: rgba(16, 15, 24, 0.3);
+  --sweep-accent: var(--color-violet);
+  --sweep-accent-2: #6d7d0a;
+  --surface: var(--color-slate);
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   margin: 0;
+  background: var(--color-paper);
+  color: #100f18;
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
-/* Button Styles */
-.btn {
-  @apply inline-flex items-center gap-2 px-4 py-2 bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg hover:bg-[#2a2a2a] transition-all duration-200 text-sm font-medium;
+::selection {
+  background: var(--color-violet);
+  color: #fff;
 }
 
-.btn-primary {
-  @apply bg-blue-600 border-blue-600 hover:bg-blue-700 text-white;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
 
-/* Skills Card */
-.skills-card {
-  @apply flex items-center gap-2 px-4 py-2 bg-[#1a1a1a] border border-[#2a2a2a] rounded-lg text-sm hover:bg-[#2a2a2a] hover:-translate-y-0.5 transition-all duration-200 cursor-default;
+@media (pointer: fine) {
+  body.has-custom-cursor,
+  body.has-custom-cursor * { cursor: none !important; }
 }
 
-/* Social Card */
-.social-card {
-  @apply w-8 h-8 rounded-lg bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center hover:bg-[#2a2a2a] transition-colors duration-200;
+@layer components {
+  .band {
+    position: relative;
+    background: var(--ground);
+    color: var(--fg);
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: 84rem;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .wrap { padding-inline: 3rem; }
+  }
+
+  .section {
+    padding-block: 6rem;
+    scroll-margin-top: 4rem;
+  }
+
+  @media (min-width: 1024px) {
+    .section { padding-block: 9rem; }
+  }
+
+  .hair { height: 1px; background: var(--hair); }
+
+  /* `// label` — lifted from a code comment, set in the warm accent. */
+  .kicker {
+    font-size: 0.72rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+
+  .kicker::before {
+    content: "// ";
+    color: var(--fg-faint);
+  }
+
+  .meta {
+    font-size: 0.68rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--fg-faint);
+  }
+
+  /* Condensed display face, tight and loud — the only non-mono type on the page. */
+  .display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.005em;
+    line-height: 0.86;
+    color: var(--fg);
+  }
+
+  .display-xl { font-size: clamp(3rem, 11.5vw, 9.5rem); }
+  .display-lg { font-size: clamp(2.4rem, 7.5vw, 5.5rem); }
+  .display-md { font-size: clamp(1.5rem, 3.2vw, 2.6rem); }
+
+  .accent-block {
+    display: inline-block;
+    width: 0.42em;
+    height: 0.42em;
+    margin-left: 0.12em;
+    background: var(--accent);
+    vertical-align: baseline;
+  }
+
+  .tagbox {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.3rem 0.6rem;
+    border: 1px solid var(--hair);
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--fg-muted);
+    white-space: nowrap;
+    transition:
+      border-color 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+      color 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+      background 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .tagbox:hover { transform: translateY(-2px); }
+
+  /* Fills with the text colour and writes in the surface colour — reads as a
+     solid black chip on paper, and inverts correctly inside a swept row. */
+  .tagbox:hover {
+    background: var(--fg);
+    border-color: var(--fg);
+    color: var(--surface);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1.4rem;
+    border: 1px solid var(--fg);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--fg);
+    background: transparent;
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+
+  .btn:hover {
+    background: var(--fg);
+    color: var(--surface);
+  }
+
+  .btn-accent {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: var(--accent-ink);
+  }
+
+  .btn-accent:hover {
+    background: transparent;
+    color: var(--accent);
+  }
+
+  .icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border: 1px solid var(--hair);
+    color: var(--fg-muted);
+    transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+  }
+
+  .icon-btn:hover {
+    color: var(--surface);
+    background: var(--fg);
+    border-color: var(--fg);
+  }
+
+  .dot-live {
+    position: relative;
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 999px;
+    background: var(--accent);
+  }
+
+  .dot-live::after {
+    content: "";
+    position: absolute;
+    inset: -0.3rem;
+    border-radius: 999px;
+    border: 1px solid var(--accent);
+    animation: pulse 2.4s ease-out infinite;
+  }
+
+  /* Row that fills with the inverted ground as the pointer enters. */
+  .row-sweep { position: relative; }
+
+  .row-sweep::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--sweep);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 0;
+  }
+
+  .row-sweep:hover::before {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+
+  .row-sweep > * { position: relative; z-index: 1; }
+
+  /*
+    Hovering swaps the row onto the other band's palette wholesale, so accents,
+    hairlines and muted text all stay legible against the fill without any
+    element needing a hover rule of its own.
+  */
+  .row-sweep:hover {
+    --fg: var(--sweep-fg);
+    --fg-muted: var(--sweep-fg-muted);
+    --fg-faint: var(--sweep-fg-faint);
+    --hair: var(--sweep-hair);
+    --accent: var(--sweep-accent);
+    --accent-2: var(--sweep-accent-2);
+    --surface: var(--sweep);
+    color: var(--sweep-fg);
+  }
 }
 
-/* Project Card */
-.project-card {
-  @apply bg-[#1a1a1a] border border-[#2a2a2a] rounded-xl overflow-hidden hover:border-[#3a3a3a] hover:-translate-y-1 transition-all duration-300;
+/* ------------------------------------------------------------ chrome ------ */
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  transform-origin: 0 50%;
+  background: linear-gradient(90deg, var(--color-violet), var(--color-chartreuse));
+  z-index: 60;
 }
 
-/* Badge Styles */
-.badge {
-  @apply px-2 py-1 text-xs rounded-full;
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.8;
+  /* Thin the network out over the headline so the type keeps its contrast. */
+  mask-image:
+    linear-gradient(100deg, transparent 0%, rgba(0, 0, 0, 0.25) 26%, #000 55%),
+    linear-gradient(to bottom, #000 60%, transparent 96%);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
 }
 
-.badge-main {
-  @apply bg-purple-500/10 border border-purple-500/30 text-purple-400;
+.hero-canvas canvas { display: block; }
+
+.cursor-ring,
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  pointer-events: none;
+  border-radius: 999px;
+  mix-blend-mode: difference;
 }
 
-.badge-running {
-  @apply bg-green-500/10 border border-green-500/30 text-green-400;
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  margin: -16px 0 0 -16px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  transition: width 0.24s ease, height 0.24s ease, margin 0.24s ease, background 0.24s ease,
+    border-color 0.24s ease, border-radius 0.24s ease;
 }
 
-.badge-development {
-  @apply bg-yellow-500/10 border border-yellow-500/30 text-yellow-400;
+.cursor-dot {
+  width: 4px;
+  height: 4px;
+  margin: -2px 0 0 -2px;
+  background: #fff;
 }
 
-/* Tech Tag */
-.tech-tag {
-  @apply px-2 py-1 bg-[#0a0a0a] border border-[#2a2a2a] rounded text-xs text-gray-400;
+.cursor-ring[data-state="link"] {
+  width: 62px;
+  height: 62px;
+  margin: -31px 0 0 -31px;
+  background: rgba(255, 255, 255, 0.92);
+  border-color: transparent;
 }
+
+.cursor-ring[data-state="text"] {
+  width: 2px;
+  height: 26px;
+  margin: -13px 0 0 -1px;
+  border-radius: 1px;
+  background: #fff;
+  border-color: transparent;
+}
+
+/* Press feedback — the ring pinches in on pointerdown. */
+.cursor-ring[data-pressed="true"] {
+  transform-origin: center;
+  width: 22px;
+  height: 22px;
+  margin: -11px 0 0 -11px;
+}
+
+.cursor-ring[data-state="link"][data-pressed="true"] {
+  width: 44px;
+  height: 44px;
+  margin: -22px 0 0 -22px;
+}
+
+.cursor-ring[data-hidden="true"],
+.cursor-dot[data-hidden="true"] { opacity: 0; }
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 34s linear infinite;
+}
+
+.marquee-track > * {
+  transition: opacity 0.4s ease;
+}
+
+.marquee:hover .marquee-track { animation-play-state: paused; }
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.6); opacity: 0.9; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+  .dot-live::after { animation: none; }
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--color-paper-2); }
+::-webkit-scrollbar-thumb { background: #b4b0c6; border: 3px solid var(--color-paper-2); }
+::-webkit-scrollbar-thumb:hover { background: var(--color-violet); }

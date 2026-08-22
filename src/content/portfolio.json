@@ -1,0 +1,466 @@
+{
+  "meta": {
+    "version": 2,
+    "updatedAt": "2026-08-22"
+  },
+  "profile": {
+    "name": "Sumit Sinha",
+    "firstName": "Sumit",
+    "lastName": "Sinha",
+    "role": "Full Stack Engineer",
+    "tagline": "I build production real-time systems and multi-tenant SaaS.",
+    "status": "Open to work",
+    "available": true,
+    "location": "Bangalore, India",
+    "email": "sumitsinha1007@gmail.com",
+    "phone": "+91 9725906744",
+    "resumeUrl": "/Sumit_Sinha_Resume.pdf",
+    "avatar": "https://avatars.githubusercontent.com/u/44542669?s=400&u=484c786d7393e0010200ac5265a1b356fd635fa1&v=4",
+    "summary": "Full Stack Engineer with 2.5+ years building production real-time systems and multi-tenant SaaS — Node.js, NestJS, React, PostgreSQL, WebRTC.",
+    "about": [
+      "I'm a full stack engineer working across the whole path a feature takes — from a Postgres schema and a NestJS service to the React screen someone actually clicks. Most of what I've shipped lives in the awkward middle: real-time systems, multi-tenant data, and the plumbing that keeps both honest.",
+      "At 8byte.ai I build a multi-tenant CRM that runs loan workflows for several NBFC brands off one codebase — role-based access, customer segmentation, and a WhatsApp Business API integration that replaced manual follow-ups across a nine-step onboarding flow.",
+      "Before that, at Videosdk.live, I built a collaborative whiteboard on WebRTC + MediaSoup for a video conferencing platform. When WebSocket drawing events started dragging production down, I split presence and drawing into multiplexed channels to keep it stable until we migrated to tldraw.",
+      "Between roles I don't idle. StreamHub and ClearLoop both came out of those gaps — production-grade, deployed, and built under real constraints instead of tutorial ones."
+    ],
+    "highlights": [
+      {
+        "value": "2.5+",
+        "label": "Years shipping"
+      },
+      {
+        "value": "2",
+        "label": "Products built solo"
+      },
+      {
+        "value": "1GB",
+        "label": "RAM VOD pipeline"
+      },
+      {
+        "value": "9.01",
+        "label": "MCA CGPA"
+      }
+    ],
+    "kicker": "Full Stack × Real-time Systems — Est. 2023",
+    "journey": "Ahmedabad → Surat → Bangalore",
+    "aboutHeading": "Half systems engineer. Half product brain.",
+    "aboutSub": "Comfortable in the query plan and in the design review."
+  },
+  "social": [
+    {
+      "id": "github",
+      "name": "GitHub",
+      "handle": "sumit298",
+      "url": "https://github.com/sumit298",
+      "icon": "github"
+    },
+    {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "handle": "sumit-sinha",
+      "url": "https://www.linkedin.com/in/sumit-sinha-6936a1189/",
+      "icon": "linkedin"
+    },
+    {
+      "id": "twitter",
+      "name": "X",
+      "handle": "@sumit29810",
+      "url": "https://twitter.com/sumit29810",
+      "icon": "x"
+    },
+    {
+      "id": "email",
+      "name": "Email",
+      "handle": "sumitsinha1007@gmail.com",
+      "url": "mailto:sumitsinha1007@gmail.com",
+      "icon": "mail"
+    }
+  ],
+  "experience": [
+    {
+      "id": "8byte",
+      "company": "8byte.ai",
+      "role": "Software Engineer",
+      "location": "Bangalore",
+      "start": "2025",
+      "end": "Present",
+      "current": true,
+      "url": "",
+      "stack": [
+        "NestJS",
+        "Next.js",
+        "PostgreSQL",
+        "Prisma",
+        "WhatsApp Business API"
+      ],
+      "points": [
+        "Built multi-tenant CRM using NestJS and Next.js, enabling loan management workflows across multiple NBFC brands through centralized role-based access control and customer segmentation",
+        "Integrated WhatsApp Business API via AiSensy to automate loan journey notifications across a 9-step onboarding flow, replacing manual follow-ups with automated status updates",
+        "Developed customer support chatbot and lead lifecycle logging system tracking key events across the loan application journey"
+      ]
+    },
+    {
+      "id": "videosdk",
+      "company": "Videosdk.live",
+      "role": "Software Development Engineer",
+      "location": "Surat",
+      "start": "2024",
+      "end": "2025",
+      "current": false,
+      "url": "https://videosdk.live",
+      "stack": [
+        "WebRTC",
+        "MediaSoup",
+        "WebSockets",
+        "React",
+        "React Flow",
+        "Strapi"
+      ],
+      "points": [
+        "Built production collaborative whiteboard using WebRTC, WebSockets, and MediaSoup for a video conferencing platform, supporting real-time multi-user drawing and annotations",
+        "Developed and maintained product pages, technical blogs, and website content using Strapi as a headless CMS, enabling non-technical teams to manage content while integrating seamlessly with the React frontend",
+        "When WebSocket-based drawing events caused production lag, proposed and implemented connection multiplexing to separate presence and drawing channels — kept the feature stable until migration to tldraw",
+        "Created AI agent workflow system using React Flow enabling automated meeting configuration"
+      ]
+    },
+    {
+      "id": "differenz",
+      "company": "Differenz System",
+      "role": "Junior Software Engineer",
+      "location": "Surat",
+      "start": "2023",
+      "end": "2024",
+      "current": false,
+      "url": "",
+      "stack": [
+        "React.js",
+        "Node.js",
+        "Redux",
+        "REST APIs"
+      ],
+      "points": [
+        "Developed frontend components and REST APIs using React.js and Node.js for client projects"
+      ]
+    },
+    {
+      "id": "cactus",
+      "company": "Cactus Communications",
+      "role": "Software Developer Intern",
+      "location": "Mumbai",
+      "start": "2023",
+      "end": "2023",
+      "current": false,
+      "url": "https://cactusglobal.com",
+      "stack": [
+        "React",
+        "TypeScript",
+        "Elasticsearch"
+      ],
+      "points": [
+        "Developed 3 production applications using React, TypeScript, and Elasticsearch including ML-powered chatbot and AI-based conference recommendation system"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "streamhub",
+      "title": "StreamHub",
+      "subtitle": "Live Video Broadcasting Platform",
+      "featured": true,
+      "status": "Live",
+      "year": "2025",
+      "description": "MediaSoup SFU-based WebRTC platform for real-time video broadcasting and screen sharing with system audio. The interesting part was the VOD pipeline: the whole thing runs on a 1GB RAM server, so recording goes out as MediaRecorder chunked uploads to Cloudflare R2, with FFmpeg processing pushed async through RabbitMQ and results cached in Redis.",
+      "highlights": [
+        "Constraint-driven VOD pipeline designed for a 1GB RAM server",
+        "MediaRecorder chunked uploads to Cloudflare R2, async FFmpeg via RabbitMQ",
+        "Prometheus/Grafana monitoring, Redis caching",
+        "Backend on Oracle Cloud with PM2, frontend on Vercel"
+      ],
+      "tech": [
+        "Next.js",
+        "Node.js",
+        "MediaSoup",
+        "WebRTC",
+        "Cloudflare R2",
+        "RabbitMQ",
+        "Redis",
+        "FFmpeg",
+        "Prometheus"
+      ],
+      "image": "/images/streamHub-preview.png",
+      "repo": "https://github.com/sumit298/streamHub",
+      "live": "",
+      "accent": "#22c55e",
+      "domain": "Web · Real-time Video"
+    },
+    {
+      "id": "clearloop",
+      "title": "ClearLoop",
+      "subtitle": "Engineering Context Layer",
+      "featured": true,
+      "status": "Building",
+      "year": "2026",
+      "description": "Multi-tenant SaaS that pulls GitHub PRs, features, bugs and release notes into one context layer for engineering teams. Shared-schema PostgreSQL with tenant isolation, plus a GitHub App whose webhooks link PRs to features automatically and generate release notes from what actually merged.",
+      "highlights": [
+        "Shared-schema PostgreSQL with row-level tenant isolation",
+        "GitHub App webhooks for automatic PR-to-feature linking",
+        "Auto-generated release notes from merged work"
+      ],
+      "tech": [
+        "NestJS",
+        "PostgreSQL",
+        "Prisma",
+        "Next.js",
+        "GitHub Webhooks"
+      ],
+      "image": "",
+      "repo": "https://github.com/sumit298",
+      "live": "",
+      "accent": "#6366f1",
+      "domain": "SaaS · Developer Tools"
+    },
+    {
+      "id": "whiteboard",
+      "title": "Multiplayer Whiteboard",
+      "subtitle": "Real-time collaborative canvas",
+      "featured": false,
+      "status": "Live",
+      "year": "2024",
+      "description": "Collaborative whiteboard built on React, tldraw and Socket.IO. Handles concurrent participants drawing and annotating together with low-latency state sync.",
+      "highlights": [],
+      "tech": [
+        "React",
+        "TypeScript",
+        "Socket.IO",
+        "tldraw",
+        "WebSockets"
+      ],
+      "image": "/images/whiteboard-preview.png",
+      "repo": "https://github.com/sumit298/multiplayer-whiteboard",
+      "live": "https://multiplayer-whiteboard-theta.vercel.app/",
+      "accent": "#3b82f6",
+      "domain": "Web · Collaboration"
+    },
+    {
+      "id": "chatvideo",
+      "title": "Realtime Chat & Video",
+      "subtitle": "WebRTC peer-to-peer calling",
+      "featured": false,
+      "status": "Live",
+      "year": "2023",
+      "description": "Chat application with video calling built on React, Redux and Firebase. WebRTC for peer-to-peer video, Firestore for real-time messaging and presence.",
+      "highlights": [],
+      "tech": [
+        "React",
+        "Redux",
+        "Firebase",
+        "WebRTC",
+        "Firestore"
+      ],
+      "image": "/images/chat-preview.png",
+      "repo": "https://github.com/sumit298/realtime-chat-video-app",
+      "live": "https://chat-app-0b0efd.netlify.app/login",
+      "accent": "#14b8a6",
+      "domain": "Web · WebRTC"
+    },
+    {
+      "id": "smartwardrobe",
+      "title": "Smart Wardrobe",
+      "subtitle": "AI outfit recommendation",
+      "featured": false,
+      "status": "Building",
+      "year": "2025",
+      "description": "Outfit recommendation system with a Next.js frontend and a Python ML pipeline using collaborative filtering, wired together as microservices between a Node.js backend and the Python service.",
+      "highlights": [],
+      "tech": [
+        "Next.js",
+        "Python",
+        "PyTorch",
+        "MongoDB",
+        "Redis",
+        "Node.js"
+      ],
+      "image": "",
+      "repo": "https://github.com/sumit298/smart-wardrobe",
+      "live": "",
+      "accent": "#a855f7",
+      "domain": "Web · Machine Learning"
+    },
+    {
+      "id": "leetcode",
+      "title": "LeetCode Solutions",
+      "subtitle": "Algorithms writeups",
+      "featured": false,
+      "status": "Live",
+      "year": "2024",
+      "description": "Docusaurus site collecting LeetCode solutions with explanations and multiple approaches per problem.",
+      "highlights": [],
+      "tech": [
+        "Docusaurus",
+        "React",
+        "JavaScript",
+        "Algorithms"
+      ],
+      "image": "/images/leetcode-preview-light.png",
+      "repo": "https://github.com/sumit298/Leetcode-Solutions",
+      "live": "https://leetcode-solutions-pearl.vercel.app/",
+      "accent": "#f97316",
+      "domain": "Docs · Algorithms"
+    },
+    {
+      "id": "storysurf",
+      "title": "Story Surf",
+      "subtitle": "Spring Boot REST API",
+      "featured": false,
+      "status": "Archived",
+      "year": "2024",
+      "description": "REST API for a story sharing platform in Spring Boot — create and share stories, with likes, comments and mood reactions.",
+      "highlights": [],
+      "tech": [
+        "Java",
+        "Spring Boot",
+        "JPA",
+        "MySQL"
+      ],
+      "image": "",
+      "repo": "https://github.com/sumit298/story-surf-backend",
+      "live": "",
+      "accent": "#eab308",
+      "domain": "Backend · REST API"
+    }
+  ],
+  "skills": [
+    {
+      "id": "languages",
+      "category": "Languages & Frontend",
+      "items": [
+        {
+          "name": "TypeScript",
+          "icon": "typescript"
+        },
+        {
+          "name": "JavaScript",
+          "icon": "javascript"
+        },
+        {
+          "name": "React",
+          "icon": "react"
+        },
+        {
+          "name": "Next.js",
+          "icon": "nextjs"
+        },
+        {
+          "name": "Tailwind CSS",
+          "icon": "tailwind"
+        },
+        {
+          "name": "Java",
+          "icon": "java"
+        }
+      ]
+    },
+    {
+      "id": "backend",
+      "category": "Backend & Systems",
+      "items": [
+        {
+          "name": "Node.js",
+          "icon": "nodejs"
+        },
+        {
+          "name": "NestJS",
+          "icon": "nestjs"
+        },
+        {
+          "name": "Express",
+          "icon": "express"
+        },
+        {
+          "name": "WebRTC",
+          "icon": "webrtc"
+        },
+        {
+          "name": "MediaSoup",
+          "icon": "webrtc"
+        },
+        {
+          "name": "Socket.io",
+          "icon": "socketio"
+        },
+        {
+          "name": "RabbitMQ",
+          "icon": "rabbitmq"
+        }
+      ]
+    },
+    {
+      "id": "data",
+      "category": "Databases & Infra",
+      "items": [
+        {
+          "name": "PostgreSQL",
+          "icon": "postgresql"
+        },
+        {
+          "name": "MongoDB",
+          "icon": "mongodb"
+        },
+        {
+          "name": "Redis",
+          "icon": "redis"
+        },
+        {
+          "name": "Prisma",
+          "icon": "prisma"
+        },
+        {
+          "name": "Docker",
+          "icon": "docker"
+        },
+        {
+          "name": "AWS",
+          "icon": "aws"
+        },
+        {
+          "name": "Git",
+          "icon": "git"
+        },
+        {
+          "name": "Linux",
+          "icon": "linux"
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "nirma",
+      "school": "Nirma University",
+      "degree": "Master of Computer Applications",
+      "detail": "CGPA 9.01 / 10",
+      "location": "Ahmedabad, Gujarat",
+      "start": "2021",
+      "end": "2023"
+    }
+  ],
+  "contact": {
+    "label": "Open to new opportunities",
+    "heading": "Let's talk.",
+    "text": "Open to full-time roles and interesting freelance work. Email is the fastest way through — I read everything.",
+    "ctaLabel": "Email me",
+    "ctaUrl": "mailto:sumitsinha1007@gmail.com?subject=Hello%20Sumit"
+  },
+  "ticker": [
+    "Open to Opportunities",
+    "Real-time Systems × Multi-tenant SaaS",
+    "NestJS · Node.js · React · PostgreSQL",
+    "WebRTC · MediaSoup · RabbitMQ",
+    "Bangalore, IN"
+  ],
+  "footer": {
+    "left": "© {year} Sumit Sinha",
+    "center": "Half systems engineer · Half product brain",
+    "right": "Bangalore, IN"
+  }
+}
